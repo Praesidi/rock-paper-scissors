@@ -1,52 +1,83 @@
 use strict;
 
-// 0 = Rock, 1 = Paper, 2 - Scissors
 let computerPoints = 0;
 let playerPoints = 0;
-let playerChoice = "";
+let roundScore = 0;
+let playerSelection = "";
+let computerSelection = "";
 
-
-function playerSelection () {
+function getPlayerChoice () {
   document.getElementById("")
 }
 
-function computerSelection () { //get random selection
+function getComputerChoice () {
   let randomNum = Math.floor(Math.random()*3);
 
-  if (randomNum = 0) {
-    let compChoice = "rock";
-    return compChoice;
+  if (randomNum == 0) {
+    computerSelection = "rock";
+    return computerSelection;
   }
-  else if (randomNum = 1) {
-    let compChoice = "paper";
-    return compChoice;
+  else if (randomNum == 1) {
+    computerSelection = "paper";
+    return computerSelection;
   }
   else {
-    let compChoice = "scissors";
-    return compChoice;
+    computerSelection = "scissors";
+    return computerSelection;
   }
 }
 
-function gameResult (computerSelection (), playerSelection ()) {
+function playRound (playerSelection, computerSelection) {
 
+  getComputerChoice();
+
+  if ((playerSelection == "rock" && computerSelection == "scissors") ||    (playerSelection == "paper" && computerSelection == "rock") ||
+  (playerSelection == "scissors" && computerSelection == "paper")){
+    playerWinsRound();
+    roundScore++;
+  }
+
+  else if ((playerSelection == "rock" && computerSelection == "paper") ||
+  (playerSelection == "paper" && computerSelection == "scissors") ||
+  (playerSelection == "scissors" && computerSelection == "rock")){
+    computerWinsRound();
+    roundScore++;
+  }
+
+  else {
+    document.querySelector("#message").innerHTML = "It's a tie!";
+  }
 }
 
-function playerScore (playerPoints) {
+function playerWinsRound (playerPoints) {
   playerPoints += 1;
-  return playerPoints;
+  document.querySelector("#playerScore").innerHTML = "Your score: " + playerPoints;
+  document.querySelector("#message").innerHTML = "Wow! Nice one. This round is yours";
 }
 
-function computerScore (computerPoints) {
-  let computerPoints += 1;
-  return computerPoints;
+function computerWinsRound (computerPoints) {
+  computerPoints += 1;
+  document.querySelector("#computerScore").innerHTML = "Computer's score: " + computerPoints;
+  document.querySelector("#message").innerHTML = "This time I am better than you. Ha-ha!";
 }
 
 function newGame () {
+  computerPoints = 0;
+  playerPoints = 0;
+  roundScore = 0;
+  playerSelection = "";
+  computerSelection = "";
+  document.querySelector("#message").innerHTML = "";
+}
+
+function game (roundScore){
+  if (roundScore =< 5){
+    playRound();
+  }
+  else {
+    newGame();
+  }
 
 }
 
-function game (){
-
-}
-
-game ();
+game();

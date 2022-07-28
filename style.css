@@ -24,8 +24,24 @@ h1, h2 {
   text-align: center;
 }
 
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
 .choiceBtn {
   border-radius: 30px;
   margin: 0 10px;
   background-color: #fff;
+}
+
+.choiceBtn:hover {
+  filter: brightness(70%);
+}
+
+.choiceBtn:active {
+  filter: brightness(85%)
 }
