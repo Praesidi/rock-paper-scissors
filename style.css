@@ -1,6 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
   width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -10,9 +9,23 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .score {
   margin-top: 100px;
+}
+
+.container img {
+  width: 70%;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.choiceBtn {
+  border-radius: 30px;
+  margin: 0 10px;
+  background-color: #fff;
 }

@@ -10,7 +10,7 @@ function playerSelection () {
   document.getElementById("")
 }
 
-function computerSelection () {
+function computerSelection () { //get random selection
   let randomNum = Math.floor(Math.random()*3);
 
   if (randomNum = 0) {
@@ -37,7 +37,7 @@ function playerScore (playerPoints) {
 }
 
 function computerScore (computerPoints) {
-  let compScore += 1;
+  let computerPoints += 1;
   return computerPoints;
 }
 
