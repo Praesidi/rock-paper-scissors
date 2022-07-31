@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Rock, Paper & Scissors</title>
-    <script type = "text/javascript" src="script.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,24 +15,26 @@
     <h2>Make Your Choice</h2>
     <div class="container">
       <div class="item">
-        <button type="button" name="button" class="choiceBtn"><img src="img/rock-sign.jpg" alt="rock sign"></button>
-      </div>
-      <div class="item">
-        <button type="button" name="button" class="choiceBtn"><img src="img/paper-sign.jpg" alt="paper sign"></button>
-      </div>
-      <div class="item">
-        <button type="button" name="button" class="choiceBtn"><img src="img/scissors-sign.jpg" alt="scissors sign"></button>
-      </div>
+        <button type="button" class="choiceBtn" id="rockBtn" value="rock"><img src="img/rock-sign.jpg" alt="rock sign"></button>
       </div>
 
+      <div class="item">
+        <button type="button" class="choiceBtn" id="paperBtn" value="paper"><img src="img/paper-sign.jpg" alt="paper sign"></button>
+      </div>
+
+      <div class="item">
+        <button type="button" class="choiceBtn" id="scissorsBtn" value="scissors"><img src="img/scissors-sign.jpg" alt="scissors sign"></button>
+      </div>
+      </div>
       <div class="scoreBlock">
-        <h2 class="playerScore">Your Score:</h2>
-        <h2 class="computerScore">Computer's Score:</h2>
+        <h2 id="playerScore">Your Score: </h2>
+        <h2 id="computerScore">Computer's Score: </h2>
       </div>
 
       <div class="messageBlock">
-        <p class="message"> </p>
+        <p id="message">Let's play!</p>
       </div>
 
+      <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

@@ -43,5 +43,10 @@ h2 {
 }
 
 .choiceBtn:active {
-  filter: brightness(85%)
+  filter: brightness(85%);
+}
+
+.messageBlock {
+  text-align: center;
+  font-size: 24px;
 }
