@@ -1,13 +1,10 @@
 let computerPoints = 0;
 let playerPoints = 0;
 let playerSelection = " ";
-//let computerSelection = "";
 const buttons = document.querySelectorAll("button");
-//const buttons = document.querySelector('.button');
 
 function getComputerChoice () {
   let randomNum = Math.floor(Math.random()*3);
-  //console.log(randomNum);
 
   switch (randomNum) {
     case (0):
@@ -44,8 +41,7 @@ function playRound (playerSelection) {
 
     if (playerPoints == 5) {
       document.querySelector("#message").innerHTML = "You are the winner!";
-      setTimeout(newGame, 2000);
-      //newGame();
+      setTimeout(newGame, 500);
     }
   }
   else if ((playerSelection == "rock" && computerSelection == "paper") ||
@@ -59,25 +55,12 @@ function playRound (playerSelection) {
 
     if (computerPoints == 5) {
       document.querySelector("#message").innerHTML = "Not this time, buddy...";
-      setTimeout(newGame, 2000);
-      //newGame();
+      setTimeout(newGame, 500);
     }
   }else{
       document.querySelector("#message").innerHTML = "It's a tie!";
     }
 }
-
-/*function playerWinsRound (playerPoints) {
-  playerPoints++;
-  document.querySelector("#playerScore").innerHTML = "Your score: " + playerPoints;
-  document.querySelector("#message").innerHTML = "Wow! Nice one. This round is yours";
-}
-
-function computerWinsRound (computerPoints) {
-  computerPoints++;
-  document.querySelector("#computerScore").innerHTML = "Computer's score: " + computerPoints;
-  document.querySelector("#message").innerHTML = "This time I am better than you. Ha-ha!";
-}*/
 
 function newGame () {
   if (window.confirm ("Wanna play another round?")){
@@ -99,6 +82,5 @@ function newGame () {
 buttons.forEach(button =>{
     button.addEventListener("click", function(){
         playRound(button.value)
-        //console.log(button.value);
     });
 })
